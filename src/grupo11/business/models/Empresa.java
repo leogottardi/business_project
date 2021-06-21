@@ -1,12 +1,15 @@
 package grupo11.business.models;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.List;
 
 public class Empresa
 {
     private String nome;
     private LocalDateTime dataFundacao;
     private CodigoPostal codigoPostal;
+    private HashMap<String, Pessoa> funcionarios;
 
     public String getNome()
     {
