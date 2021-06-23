@@ -1,8 +1,16 @@
 package grupo11.business;
 
+import grupo11.business.models.Empregado;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+        Empregado empregado = new Empregado();
+
+        empregado.setNome("Aroldo");
+
+        System.out.println(empregado.getNome());
+
     }
 }
