@@ -32,9 +32,9 @@ public class Empregado extends Pessoa {
         this.iRS = i;
     }
 
-    // Preciso saber se esse iRS realmente seria uma forma de remuneração que entraria no saláriosalarioBase + iRS
+
     public float calcularSalario(){
 
-        return salarioBase + iRS;
+        return salarioBase - iRS;
     }
 }

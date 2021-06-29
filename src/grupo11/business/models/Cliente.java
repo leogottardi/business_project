@@ -31,10 +31,8 @@ public class Cliente extends Pessoa {
         this.valorEmDivida = v;
     }
 
-
-    // Preciso saber ainda se isso seria realmente o saldo total
     public float obterSaldo() {
 
-        return plafond + valorEmDivida;
+        return plafond - valorEmDivida;
     }
 }
