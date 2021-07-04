@@ -12,24 +12,24 @@ public class Empregado extends Pessoa {
         return numeroSeccao;
     }
 
-    public void setNumeroSeccao(int n) {
-        this.numeroSeccao = n;
+    public void setNumeroSeccao(int numeroSeccao) {
+        this.numeroSeccao = numeroSeccao;
     }
 
     public float getSalarioBase() {
         return salarioBase;
     }
 
-    public void setSalarioBase(float s) {
-        this.salarioBase = s;
+    public void setSalarioBase(float salarioBase) {
+        this.salarioBase = salarioBase;
     }
 
     public float getiRS() {
         return iRS;
     }
 
-    public void setiRS(float i) {
-        this.iRS = i;
+    public void setiRS(float iRS) {
+        this.iRS = iRS;
     }
 
 

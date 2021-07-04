@@ -2,7 +2,6 @@ package grupo11.business.models;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
-import java.util.List;
 
 public class Empresa
 {
