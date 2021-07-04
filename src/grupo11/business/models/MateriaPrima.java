@@ -11,8 +11,12 @@ public class MateriaPrima {
         this.custo = custo;
     }
 
-    public void mostrar() {
+    public String mostrar() {
+        String infoMateriaPrima = "Origem: " + this.getOrigem() +
+                "\nCodigo: " + this.getCodigo() +
+                "\nCusto: " + this.getCusto();
 
+        return infoMateriaPrima;
     }
 
     public String getOrigem() {

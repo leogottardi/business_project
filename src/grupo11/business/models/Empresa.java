@@ -55,12 +55,10 @@ public class Empresa
     public List<String> listarProdutos() {
         List<String> produtos = new ArrayList<String>();
 
-        for(int i = 0; i < this.produtos.size(); i++) {
-            Produto produto = this.produtos.get(i);
-
+        for (Produto produto : this.produtos) {
             String infoProduto = "Designacao: " + produto.getDesignacao() +
-            "\nPreço de venda: " + produto.getPrecoVendaPublico() +
-            "\nEstoque: " + produto.getStock();
+                    "\nPreço de venda: " + produto.getPrecoVendaPublico() +
+                    "\nEstoque: " + produto.getStock();
 
             produtos.add(infoProduto);
         }
@@ -71,16 +69,14 @@ public class Empresa
     public void addEmpregado(Empregado empregado) {
         this.empregados.add(empregado);
     }
-    
+
     public List<String> listarEmpregados() {
         List<String> empregados = new ArrayList<String>();
 
-        for(int i = 0; i < this.empregados.size(); i++) {
-            Empregado empregado = this.empregados.get(i);
-
+        for (Empregado empregado : this.empregados) {
             String infoEmpregado = "Nome: " + empregado.getNome() +
-            "\nIdade: " + empregado.getIdade() +
-            "\nSalário: " + empregado.calcularSalario();
+                    "\nIdade: " + empregado.getIdade() +
+                    "\nSalário: " + empregado.calcularSalario();
 
             empregados.add(infoEmpregado);
         }
@@ -95,12 +91,10 @@ public class Empresa
     public List<String> listarClientes() {
         List<String> clientes = new ArrayList<String>();
 
-        for(int i = 0; i < this.clientes.size(); i++) {
-            Cliente cliente = this.clientes.get(i);
-
+        for (Cliente cliente : this.clientes) {
             String infoCliente = "Nome: " + cliente.getNome() +
-            "\nIdade: " + cliente.getIdade() +
-            "\nPlafond: " + cliente.getPlafond();
+                    "\nIdade: " + cliente.getIdade() +
+                    "\nPlafond: " + cliente.getPlafond();
 
             clientes.add(infoCliente);
         }
@@ -113,6 +107,6 @@ public class Empresa
     }
 
     public void listarFornecedores() {
-        
+
     }
 }
