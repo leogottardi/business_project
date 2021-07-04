@@ -8,7 +8,13 @@ public class Empresa
     private String nome;
     private LocalDateTime dataFundacao;
     private CodigoPostal codigoPostal;
-    private HashMap<String, Pessoa> funcionarios;
+    private HashMap<String, Pessoa> funcionarios = new HashMap<String, Pessoa>();
+
+    public Empresa(String nome, LocalDateTime dataFundacao, CodigoPostal codigoPostal) {
+        this.nome = nome;
+        this.dataFundacao = dataFundacao;
+        this.codigoPostal = codigoPostal;
+    }
 
     public String getNome()
     {

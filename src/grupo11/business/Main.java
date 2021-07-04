@@ -1,16 +1,17 @@
 package grupo11.business;
 
-import grupo11.business.models.Empregado;
+import java.time.LocalDateTime;
+
+import grupo11.business.models.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Empregado empregado = new Empregado();
+        CodigoPostal codigoPostal = new CodigoPostal(1, 1, "Zona 1");
 
-        empregado.setNome("Aroldo");
+       Empresa empresa = new Empresa("Nome Empresa", LocalDateTime.now(), codigoPostal);
 
-        System.out.println(empregado.getNome());
-
+       System.out.println("Empresa: " + empresa.getNome());
     }
 }

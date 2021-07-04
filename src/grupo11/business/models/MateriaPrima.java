@@ -5,6 +5,12 @@ public class MateriaPrima {
     private int codigo;
     private float custo;
 
+    public MateriaPrima(String origem, int codigo, float custo) {
+        this.origem = origem;
+        this.codigo = codigo;
+        this.custo = custo;
+    }
+
     public void mostrar() {
 
     }

@@ -6,6 +6,12 @@ public class Produto
     private float precoVendaPublico;
     private int stock;
 
+    public Produto(String designacao, float precoVendaPublico, int stock) {
+        this.designacao = designacao;
+        this.precoVendaPublico = precoVendaPublico;
+        this.stock = stock;
+    }
+
     public String getDesignacao()
     {
         return designacao;

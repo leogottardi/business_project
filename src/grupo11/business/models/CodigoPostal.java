@@ -6,6 +6,12 @@ public class CodigoPostal
     private int extensao;
     private String zona;
 
+    public CodigoPostal(int indicativo, int extensao, String zona) {
+        this.indicativo = indicativo;
+        this.extensao = extensao;
+        this.zona = zona;
+    }
+
     public int getIndicativo()
     {
         return indicativo;

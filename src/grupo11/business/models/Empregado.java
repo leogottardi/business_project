@@ -8,6 +8,12 @@ public class Empregado extends Pessoa {
 
     private float iRS;
 
+    public Empregado(int numeroSeccao, float salarioBase, float iRS) {
+        this.numeroSeccao = numeroSeccao;
+        this.salarioBase = salarioBase;
+        this.iRS = iRS;
+    }
+
     public int getNumeroSeccao() {
         return numeroSeccao;
     }
