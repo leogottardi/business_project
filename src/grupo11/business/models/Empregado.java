@@ -15,8 +15,7 @@ public class Empregado extends Pessoa {
         String nome, 
         long contribuinte, 
         int idade, 
-        CodigoPostal codigoPostal
-        ) {
+        CodigoPostal codigoPostal) {
         super(nome, contribuinte, idade, codigoPostal);
         this.numeroSeccao = numeroSeccao;
         this.salarioBase = salarioBase;

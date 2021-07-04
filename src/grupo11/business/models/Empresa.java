@@ -2,7 +2,6 @@ package grupo11.business.models;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Empresa
@@ -10,8 +9,10 @@ public class Empresa
     private String nome;
     private LocalDateTime dataFundacao;
     private CodigoPostal codigoPostal;
-    private HashMap<String, Pessoa> funcionarios = new HashMap<String, Pessoa>();
     private List<Produto> produtos = new ArrayList<Produto>();
+    private List<Empregado> empregados = new ArrayList<Empregado>();
+    private List<Cliente> clientes = new ArrayList<Cliente>();
+    private List<Fornecedor> fornecedores = new ArrayList<Fornecedor>();
 
     public Empresa(String nome, LocalDateTime dataFundacao, CodigoPostal codigoPostal) {
         this.nome = nome;
@@ -47,6 +48,10 @@ public class Empresa
         this.codigoPostal = codigoPostal;
     }
 
+    public void addProduto(Produto produto){
+        this.produtos.add(produto);
+    }
+
     public List<String> listarProdutos() {
         List<String> produtos = new ArrayList<String>();
 
@@ -63,7 +68,51 @@ public class Empresa
         return produtos;
     }
 
-    public void addProduto(Produto produto){
-        this.produtos.add(produto);
+    public void addEmpregado(Empregado empregado) {
+        this.empregados.add(empregado);
+    }
+    
+    public List<String> listarEmpregados() {
+        List<String> empregados = new ArrayList<String>();
+
+        for(int i = 0; i < this.empregados.size(); i++) {
+            Empregado empregado = this.empregados.get(i);
+
+            String infoEmpregado = "Nome: " + empregado.getNome() +
+            "\nIdade: " + empregado.getIdade() +
+            "\nSalário: " + empregado.calcularSalario();
+
+            empregados.add(infoEmpregado);
+        }
+
+        return empregados;
+    }
+
+    public void addCliente(Cliente cliente) {
+        this.clientes.add(cliente);
+    }
+
+    public List<String> listarClientes() {
+        List<String> clientes = new ArrayList<String>();
+
+        for(int i = 0; i < this.clientes.size(); i++) {
+            Cliente cliente = this.clientes.get(i);
+
+            String infoCliente = "Nome: " + cliente.getNome() +
+            "\nIdade: " + cliente.getIdade() +
+            "\nPlafond: " + cliente.getPlafond();
+
+            clientes.add(infoCliente);
+        }
+
+        return clientes;
+    }
+
+    public void addFornecedor(Fornecedor fornecedor) {
+        this.fornecedores.add(fornecedor);
+    }
+
+    public void listarFornecedores() {
+        
     }
 }
