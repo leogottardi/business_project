@@ -7,6 +7,21 @@ public class Fornecedor extends Pessoa {
     private float valorEmDivida;
     private Fornece[] fornece; //todo keep it?
 
+    public Fornecedor(
+        float plafond, 
+        float valorEmDivida, 
+        Fornece[] fornece, 
+        String nome, 
+        long contribuinte, 
+        int idade, 
+        CodigoPostal codigoPostal
+        ) {
+        super(nome, contribuinte, idade, codigoPostal);
+        this.plafond = plafond;
+        this.valorEmDivida = valorEmDivida;
+        this.fornece = fornece;
+    }
+
     public float getPlafond() {
         return plafond;
     }

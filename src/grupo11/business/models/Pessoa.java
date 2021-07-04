@@ -7,6 +7,13 @@ public class Pessoa
     private int idade;
     private CodigoPostal codigoPostal;
 
+    public Pessoa(String nome, long contribuinte, int idade, CodigoPostal codigoPostal) {
+        this.nome = nome;
+        this.contribuinte = contribuinte;
+        this.idade = idade;
+        this.codigoPostal = codigoPostal;
+    }
+
     public String getNome()
     {
         return nome;

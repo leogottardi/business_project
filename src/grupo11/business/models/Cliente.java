@@ -5,7 +5,15 @@ public class Cliente extends Pessoa {
     private float plafond;
     private float valorEmDivida;
 
-    public Cliente(float plafond, float valorEmDivida) {
+    public Cliente(
+        float plafond, 
+        float valorEmDivida, 
+        String nome, 
+        long contribuinte, 
+        int idade, 
+        CodigoPostal codigoPostal
+        ) {
+        super(nome, contribuinte, idade, codigoPostal);
         this.plafond = plafond;
         this.valorEmDivida = valorEmDivida;
     }
