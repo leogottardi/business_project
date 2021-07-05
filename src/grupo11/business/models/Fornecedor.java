@@ -46,14 +46,14 @@ public class Fornecedor extends Pessoa {
     }
 
     public String listarFornecimentos() {
-        String fornecimentos = "";
+        StringBuilder fornecimentos = new StringBuilder();
 
         for (Fornece fornecimento : this.fornecimentos) {
             String infoFornecimento = fornecimento.mostrar();
-            fornecimentos += infoFornecimento;
+            fornecimentos.append(infoFornecimento);
         }
 
-        return fornecimentos;
+        return fornecimentos.toString();
     }
 
     public String mostrar() {

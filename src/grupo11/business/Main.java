@@ -9,8 +9,14 @@ public class Main {
     public static void main(String[] args) {
 
         // Criando empresa
-        CodigoPostal codigoPostal = new CodigoPostal(1, 1, "Zona 1");
-        Empresa empresa = new Empresa("Nome Empresa", LocalDateTime.now(), codigoPostal);
+        CodigoPostal codigoPostal1 = new CodigoPostal(1, 1, "Zona 1");
+        CodigoPostal codigoPostal2 = new CodigoPostal(2, 2, "Zona 2");
+        CodigoPostal codigoPostal3 = new CodigoPostal(3, 3, "Zona 3");
+        CodigoPostal codigoPostal4 = new CodigoPostal(4, 4, "Zona 4");
+        CodigoPostal codigoPostal5 = new CodigoPostal(5, 5, "Zona 5");
+        CodigoPostal codigoPostal6 = new CodigoPostal(6, 5, "Zona 6");
+        CodigoPostal codigoPostal7 = new CodigoPostal(7, 5, "Zona 7");
+        Empresa empresa = new Empresa("Nome Empresa", LocalDateTime.now(), codigoPostal1);
 
         // Adicionando produto na empresa
         Produto p1 = new Produto("Designacao 1", 3000.20f, 3);
@@ -19,26 +25,41 @@ public class Main {
         empresa.addProduto(p2);
 
         // Adicionando empregado na empresa
-        Empregado empregado1 = new Empregado("Leonardo", 100, 30, 798546,1000.00f, 10.00f, codigoPostal);
+        Empregado empregado1 = new Empregado("Lucas", 100, 30, 798546, 2842.00f, 10.00f, codigoPostal2);
+        Empregado empregado2 = new Empregado("Renato", 694, 28, 236152, 2365.00f, 329.00f, codigoPostal3);
         empresa.addEmpregado(empregado1);
+        empresa.addEmpregado(empregado2);
 
         // Adicionando cliente na empresa
-        Cliente cliente = new Cliente("Lucas", 2302, 19, 1034.23f, 30.32f, codigoPostal);
-        empresa.addCliente(cliente);
+        Cliente cliente1 = new Cliente("Lorena", 2302, 19, 1034.23f, 30.32f, codigoPostal4);
+        Cliente cliente2 = new Cliente("Rafaela", 3235, 68, 2572.23f, 92.32f, codigoPostal5);
+        empresa.addCliente(cliente1);
+        empresa.addCliente(cliente2);
 
         // Adicionando fornecedor a empresa
-        Fornecedor fornecedor = new Fornecedor("Sorveteiro", 456, 45, 4500f, 15, codigoPostal);
-        empresa.addFornecedor(fornecedor);
+        Fornecedor fornecedor1 = new Fornecedor("Baiano", 745, 65, 8535.40f, 76, codigoPostal6);
+        Fornecedor fornecedor2 = new Fornecedor("Japonês", 213, 45, 4500.48f, 15, codigoPostal7);
+        empresa.addFornecedor(fornecedor1);
+        empresa.addFornecedor(fornecedor2);
 
-        //Adicionar Materia Prima
-        MateriaPrima materiaPrima = new MateriaPrima("Pedra", 213546, 15000.0f);
-        MateriaPrima materiaPrima2 = new MateriaPrima("Sabao em Po", 213545, 7000.0f);
+        // Adicionar Materia Prima
+        MateriaPrima materiaPrima1 = new MateriaPrima("Coco", 765854, 2946.0f);
+        MateriaPrima materiaPrima2 = new MateriaPrima("Mangaba", 24862, 7000.0f);
 
-        // Criacao de Fornece
-        Fornece fornece = new Fornece(fornecedor, materiaPrima, 8);
-        Fornece fornece2 = new Fornece(fornecedor, materiaPrima2, 10);
-        fornecedor.addFornece(fornece);
-        fornecedor.addFornece(fornece2);
+        MateriaPrima materiaPrima3 = new MateriaPrima("Pastel", 42917, 84531.03f);
+        MateriaPrima materiaPrima4 = new MateriaPrima("Coxinha", 921752, 391752.02f);
+
+        // Criacao de Fornececimento fornecedor1
+        Fornece fornece1 = new Fornece(fornecedor1, materiaPrima1, 8);
+        Fornece fornece2 = new Fornece(fornecedor1, materiaPrima2, 10);
+        fornecedor1.addFornece(fornece1);
+        fornecedor1.addFornece(fornece2);
+
+        // Criacao de Fornececimento fornecedor2
+        Fornece fornece3 = new Fornece(fornecedor2, materiaPrima3, 8);
+        Fornece fornece4 = new Fornece(fornecedor2, materiaPrima4, 10);
+        fornecedor2.addFornece(fornece3);
+        fornecedor2.addFornece(fornece4);
 
         System.out.println("Empresa: " + empresa.getNome());
         System.out.println("-----------------------------");
