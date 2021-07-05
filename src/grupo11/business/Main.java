@@ -54,7 +54,7 @@ public class Main {
         // Listando Empregados
         List<String> empregados = empresa.listarEmpregados();
 
-        System.out.print("Empregados: \n");
+        System.out.print("Empregados:");
         for(int i = 0; i < empregados.size(); i ++) {
             System.out.println(empregados.get(i));
             System.out.println("");
@@ -64,7 +64,7 @@ public class Main {
         // Listando Clientes
         List<String> clientes = empresa.listarClientes();
 
-        System.out.print("Clientes: \n");
+        System.out.print("Clientes:");
         for(int i = 0; i < clientes.size(); i ++) {
             System.out.println(clientes.get(i));
             System.out.println("");
@@ -74,7 +74,7 @@ public class Main {
         // Listando Fornecedor
         List<String> fornecedores = empresa.listarFornecedores();
 
-        System.out.print("Fornecedores: \n");
+        System.out.print("Fornecedores:");
         for(int i = 0; i < fornecedores.size(); i ++) {
             System.out.println(fornecedores.get(i));
             System.out.println("");

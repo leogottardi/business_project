@@ -48,9 +48,8 @@ public class Fornece {
     }
 
     public String mostrar() {
-        String infoFornece = "\n    > Materia Prima: " + this.getMateriaPrima().mostrar() +
-                "\n    > Quantidade: " + this.getQuantidade() +
-                "\n    > Data: " + this.getData() + "\n";
+        String infoFornece = "\n        > Materia Prima: " + this.getMateriaPrima().mostrar()
+                + "\n        > Quantidade: " + this.getQuantidade() + "\n        > Data: " + this.getData() + "\n";
 
         return infoFornece;
     }
