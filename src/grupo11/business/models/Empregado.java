@@ -1,20 +1,17 @@
 package grupo11.business.models;
 
 public class Empregado extends Pessoa {
-
     private int numeroSeccao;
-
     private float salarioBase;
-
     private float iRS;
 
     public Empregado(
-        int numeroSeccao, 
-        float salarioBase, 
-        float iRS, 
-        String nome, 
-        long contribuinte, 
-        int idade, 
+        String nome,
+        long contribuinte,
+        int idade,
+        int numeroSeccao,
+        float salarioBase,
+        float iRS,
         CodigoPostal codigoPostal) {
         super(nome, contribuinte, idade, codigoPostal);
         this.numeroSeccao = numeroSeccao;
@@ -46,9 +43,20 @@ public class Empregado extends Pessoa {
         this.iRS = iRS;
     }
 
-
     public float calcularSalario(){
 
         return salarioBase - iRS;
+    }
+
+    public String mostrar() {
+        String infoEmpregado = "\n    > Nome: " + this.getNome() +
+                "\n    > Contribuinte: " + this.getContribuinte() +
+                "\n    > Idade: " + this.getIdade() +
+                "\n    > Numero de Secao: " + this.getNumeroSeccao() +
+                "\n    > Salario Base: " + this.getSalarioBase() +
+                "\n    > IRS: " + this.getiRS() +
+                "\n    > Codigo Postal: " + this.getCodigoPostal().mostrar();
+
+        return infoEmpregado;
     }
 }

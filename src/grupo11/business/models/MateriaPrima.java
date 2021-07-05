@@ -11,14 +11,6 @@ public class MateriaPrima {
         this.custo = custo;
     }
 
-    public String mostrar() {
-        String infoMateriaPrima = "Origem: " + this.getOrigem() +
-                "\nCodigo: " + this.getCodigo() +
-                "\nCusto: " + this.getCusto();
-
-        return infoMateriaPrima;
-    }
-
     public String getOrigem() {
         return origem;
     }
@@ -41,5 +33,13 @@ public class MateriaPrima {
 
     public void setCusto(float custo) {
         this.custo = custo;
+    }
+
+    public String mostrar() {
+        String infoMateriaPrima = "Origem: " + this.getOrigem() +
+                ", Codigo: " + this.getCodigo() +
+                ", Custo: " + this.getCusto() + ".";
+
+        return infoMateriaPrima;
     }
 }

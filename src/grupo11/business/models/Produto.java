@@ -41,4 +41,12 @@ public class Produto
     {
         this.stock = stock;
     }
+
+    public String mostrar() {
+        String infoProduto = "\n    > Designacao: " + this.getDesignacao() +
+                "\n    > Preço de venda: " + this.getPrecoVendaPublico() +
+                "\n    > Estoque: " + this.getStock() + "\n";
+
+        return infoProduto;
+    }
 }

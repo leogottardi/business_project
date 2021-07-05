@@ -1,21 +1,19 @@
 package grupo11.business.models;
 
-import grupo11.business.models.Fornece;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Fornecedor extends Pessoa {
     private float plafond; // limite de crédito ou limite máximo de despesas, ou seja, um teto
     private float valorEmDivida;
-    private List<Fornece> fornecimentos = new ArrayList<Fornece>();
+    private List<Fornece> fornecimentos = new ArrayList<>();
 
     public Fornecedor(
-            float plafond,
-            float valorEmDivida,
             String nome,
             long contribuinte,
             int idade,
+            float plafond,
+            float valorEmDivida,
             CodigoPostal codigoPostal
     ) {
         super(nome, contribuinte, idade, codigoPostal);
@@ -43,22 +41,30 @@ public class Fornecedor extends Pessoa {
         return 0;
     }
 
-    public void addFornece(Fornece c) {
-
+    public void addFornece(Fornece fornecimento) {
+        this.fornecimentos.add(fornecimento);
     }
 
-    public List<String> listarFornecimentos() {
-        List<String> fornecimentos = new ArrayList<String>();
+    public String listarFornecimentos() {
+        String fornecimentos = "";
 
         for (Fornece fornecimento : this.fornecimentos) {
-            String infoFornecimento = "Materia Prima: " + fornecimento.getMateria().mostrar() +
-                    "\nQuantidade: " + fornecimento.getQuantidade() +
-                    "\nData: " + fornecimento.getData();
-
-            fornecimentos.add(infoFornecimento);
+            String infoFornecimento = fornecimento.mostrar();
+            fornecimentos += infoFornecimento;
         }
 
         return fornecimentos;
     }
 
+    public String mostrar() {
+        String infoFornecedor = "\n    > Nome: " + this.getNome() +
+                "\n    > Contribuinte: " + getContribuinte() +
+                "\n    > Idade: " + getIdade() +
+                "\n    > Limite de Credito: " + this.getPlafond() +
+                "\n    > Valor em Divida: " + this.getValorEmDivida() +
+                "\n    > Codigo Postal: " + this.getCodigoPostal().mostrar() +
+                "\n    > Fornecimentos: " + this.listarFornecimentos();
+
+        return infoFornecedor;
+    }
 }

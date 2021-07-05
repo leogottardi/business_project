@@ -1,13 +1,18 @@
 package grupo11.business.models;
 
+import java.time.LocalDateTime;
+
 public class Fornece {
     private Fornecedor fornecedor;
-    private MateriaPrima materia;
+    private MateriaPrima materiaPrima;
     private int quantidade;
-    private int data;
+    private LocalDateTime data;
 
-    public void mostrar() {
-
+    public Fornece(Fornecedor fornecedor, MateriaPrima materiaPrima, int quantidade) {
+        this.fornecedor = fornecedor;
+        this.materiaPrima = materiaPrima;
+        this.quantidade = quantidade;
+        this.data = LocalDateTime.now();
     }
 
     public Fornecedor getFornecedor() {
@@ -18,12 +23,12 @@ public class Fornece {
         this.fornecedor = fornecedor;
     }
 
-    public MateriaPrima getMateria() {
-        return materia;
+    public MateriaPrima getMateriaPrima() {
+        return materiaPrima;
     }
 
-    public void setMateria(MateriaPrima materia) {
-        this.materia = materia;
+    public void setMateriaPrima(MateriaPrima materiaPrima) {
+        this.materiaPrima = materiaPrima;
     }
 
     public int getQuantidade() {
@@ -34,11 +39,19 @@ public class Fornece {
         this.quantidade = quantidade;
     }
 
-    public int getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(int data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
+    }
+
+    public String mostrar() {
+        String infoFornece = "\n    > Materia Prima: " + this.getMateriaPrima().mostrar() +
+                "\n    > Quantidade: " + this.getQuantidade() +
+                "\n    > Data: " + this.getData() + "\n";
+
+        return infoFornece;
     }
 }

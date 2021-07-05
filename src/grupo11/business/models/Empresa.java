@@ -4,15 +4,14 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Empresa
-{
+public class Empresa {
     private String nome;
     private LocalDateTime dataFundacao;
     private CodigoPostal codigoPostal;
-    private List<Produto> produtos = new ArrayList<Produto>();
-    private List<Empregado> empregados = new ArrayList<Empregado>();
-    private List<Cliente> clientes = new ArrayList<Cliente>();
-    private List<Fornecedor> fornecedores = new ArrayList<Fornecedor>();
+    private List<Produto> produtos = new ArrayList<>();
+    private List<Empregado> empregados = new ArrayList<>();
+    private List<Cliente> clientes = new ArrayList<>();
+    private List<Fornecedor> fornecedores = new ArrayList<>();
 
     public Empresa(String nome, LocalDateTime dataFundacao, CodigoPostal codigoPostal) {
         this.nome = nome;
@@ -20,23 +19,19 @@ public class Empresa
         this.codigoPostal = codigoPostal;
     }
 
-    public String getNome()
-    {
+    public String getNome() {
         return this.nome;
     }
 
-    public void setNome(String nome)
-    {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public LocalDateTime getDataFundacao()
-    {
+    public LocalDateTime getDataFundacao() {
         return this.dataFundacao;
     }
 
-    public void setDataFundacao(LocalDateTime dataFundacao)
-    {
+    public void setDataFundacao(LocalDateTime dataFundacao) {
         this.dataFundacao = dataFundacao;
     }
 
@@ -48,7 +43,7 @@ public class Empresa
         this.codigoPostal = codigoPostal;
     }
 
-    public void addProduto(Produto produto){
+    public void addProduto(Produto produto) {
         this.produtos.add(produto);
     }
 
@@ -56,11 +51,7 @@ public class Empresa
         List<String> produtos = new ArrayList<String>();
 
         for (Produto produto : this.produtos) {
-            String infoProduto = "Designacao: " + produto.getDesignacao() +
-                    "\nPreço de venda: " + produto.getPrecoVendaPublico() +
-                    "\nEstoque: " + produto.getStock();
-
-            produtos.add(infoProduto);
+            produtos.add(produto.mostrar());
         }
 
         return produtos;
@@ -74,11 +65,8 @@ public class Empresa
         List<String> empregados = new ArrayList<String>();
 
         for (Empregado empregado : this.empregados) {
-            String infoEmpregado = "Nome: " + empregado.getNome() +
-                    "\nIdade: " + empregado.getIdade() +
-                    "\nSalário: " + empregado.calcularSalario();
 
-            empregados.add(infoEmpregado);
+            empregados.add(empregado.mostrar());
         }
 
         return empregados;
@@ -92,11 +80,7 @@ public class Empresa
         List<String> clientes = new ArrayList<String>();
 
         for (Cliente cliente : this.clientes) {
-            String infoCliente = "Nome: " + cliente.getNome() +
-                    "\nIdade: " + cliente.getIdade() +
-                    "\nPlafond: " + cliente.getPlafond();
-
-            clientes.add(infoCliente);
+            clientes.add(cliente.mostrar());
         }
 
         return clientes;
@@ -106,7 +90,12 @@ public class Empresa
         this.fornecedores.add(fornecedor);
     }
 
-    public void listarFornecedores() {
+    public List<String> listarFornecedores() {
+        List<String> fornecedores = new ArrayList<>();
 
+        for(Fornecedor fornecedor : this.fornecedores) {
+            fornecedores.add(fornecedor.mostrar());
+        }
+        return fornecedores;
     }
 }

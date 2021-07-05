@@ -41,4 +41,12 @@ public class CodigoPostal
     {
         this.zona = zona;
     }
+
+    public String mostrar() {
+        String infoCodigoPostal = "Indicativo: " + this.getIndicativo() +
+                ", Extensao: " + this.getExtensao() +
+                ", Zona: " + this.getZona() + ".";
+
+        return infoCodigoPostal;
+    }
 }

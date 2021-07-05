@@ -1,16 +1,15 @@
 package grupo11.business.models;
 
 public class Cliente extends Pessoa {
-
     private float plafond;
     private float valorEmDivida;
 
     public Cliente(
-        float plafond, 
-        float valorEmDivida, 
-        String nome, 
-        long contribuinte, 
-        int idade, 
+        String nome,
+        long contribuinte,
+        int idade,
+        float plafond,
+        float valorEmDivida,
         CodigoPostal codigoPostal
         ) {
         super(nome, contribuinte, idade, codigoPostal);
@@ -37,5 +36,16 @@ public class Cliente extends Pessoa {
     public float obterSaldo() {
 
         return plafond - valorEmDivida;
+    }
+
+    public String mostrar() {
+        String infoCliente = "\n    > Nome: " + this.getNome() +
+                "\n    > Contribuinte: " + this.getContribuinte() +
+                "\n    > Idade: " + this.getIdade() +
+                "\n    > Limite de Crédito: " + this.getPlafond() +
+                "\n    > Valor em Dívida: " + this.valorEmDivida +
+                "\n    > Codigo Postal: " + this.getCodigoPostal().mostrar();
+
+        return infoCliente;
     }
 }
