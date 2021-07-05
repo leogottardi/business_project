@@ -38,7 +38,9 @@ public class Fornecedor extends Pessoa {
     }
 
     public float obterSaldo() {
-        return 0;
+        float saldo = this.getPlafond() - this.getValorEmDivida();
+
+        return  saldo;
     }
 
     public void addFornece(Fornece fornecimento) {
