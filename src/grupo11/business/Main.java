@@ -67,8 +67,9 @@ public class Main {
         
         // Listando Produtos
         List<String> produtos = empresa.listarProdutos();
-        for(int i = 0; i < produtos.size(); i ++) {
-            System.out.print(produtos.get(i));
+        for (String produto : produtos)
+        {
+            System.out.print(produto);
         }
 
         System.out.println("-----------------------------");
@@ -76,9 +77,10 @@ public class Main {
         List<String> empregados = empresa.listarEmpregados();
 
         System.out.print("Empregados:");
-        for(int i = 0; i < empregados.size(); i ++) {
-            System.out.println(empregados.get(i));
-            System.out.println("");
+        for (String empregado : empregados)
+        {
+            System.out.println(empregado);
+            System.out.println();
         }
         
         System.out.println("-----------------------------");
@@ -86,9 +88,10 @@ public class Main {
         List<String> clientes = empresa.listarClientes();
 
         System.out.print("Clientes:");
-        for(int i = 0; i < clientes.size(); i ++) {
-            System.out.println(clientes.get(i));
-            System.out.println("");
+        for (String cliente : clientes)
+        {
+            System.out.println(cliente);
+            System.out.println();
         }
 
         System.out.println("-----------------------------");
@@ -96,9 +99,10 @@ public class Main {
         List<String> fornecedores = empresa.listarFornecedores();
 
         System.out.print("Fornecedores:");
-        for(int i = 0; i < fornecedores.size(); i ++) {
-            System.out.println(fornecedores.get(i));
-            System.out.println("");
+        for (String fornecedore : fornecedores)
+        {
+            System.out.println(fornecedore);
+            System.out.println();
         }
     }
 }

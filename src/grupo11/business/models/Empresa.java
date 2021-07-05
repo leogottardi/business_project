@@ -8,10 +8,10 @@ public class Empresa {
     private String nome;
     private LocalDateTime dataFundacao;
     private CodigoPostal codigoPostal;
-    private List<Produto> produtos = new ArrayList<>();
-    private List<Empregado> empregados = new ArrayList<>();
-    private List<Cliente> clientes = new ArrayList<>();
-    private List<Fornecedor> fornecedores = new ArrayList<>();
+    private final List<Produto> produtos = new ArrayList<>();
+    private final List<Empregado> empregados = new ArrayList<>();
+    private final List<Cliente> clientes = new ArrayList<>();
+    private final List<Fornecedor> fornecedores = new ArrayList<>();
 
     public Empresa(String nome, LocalDateTime dataFundacao, CodigoPostal codigoPostal) {
         this.nome = nome;
@@ -48,7 +48,7 @@ public class Empresa {
     }
 
     public List<String> listarProdutos() {
-        List<String> produtos = new ArrayList<String>();
+        List<String> produtos = new ArrayList<>();
 
         for (Produto produto : this.produtos) {
             produtos.add(produto.mostrar());
@@ -62,7 +62,7 @@ public class Empresa {
     }
 
     public List<String> listarEmpregados() {
-        List<String> empregados = new ArrayList<String>();
+        List<String> empregados = new ArrayList<>();
 
         for (Empregado empregado : this.empregados) {
 
@@ -77,7 +77,7 @@ public class Empresa {
     }
 
     public List<String> listarClientes() {
-        List<String> clientes = new ArrayList<String>();
+        List<String> clientes = new ArrayList<>();
 
         for (Cliente cliente : this.clientes) {
             clientes.add(cliente.mostrar());

@@ -6,7 +6,7 @@ import java.util.List;
 public class Fornecedor extends Pessoa {
     private float plafond; // limite de crédito ou limite máximo de despesas, ou seja, um teto
     private float valorEmDivida;
-    private List<Fornece> fornecimentos = new ArrayList<>();
+    private final List<Fornece> fornecimentos = new ArrayList<>();
 
     public Fornecedor(
             String nome,
